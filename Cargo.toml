@@ -1,0 +1,27 @@
+[package]
+name = "wjr-bot"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14.20", features = ["full", "server", "http1"] }
+chrono = "0.4.22"
+lazy_static = "1.4.0"
+tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
+dotenv = "0.15.0"
+async_runtime = { version = "0.3.4", package = "naja_async_runtime" }
+
+[dependencies.serenity]
+default-features = false
+features = [
+    "builder",
+    "chrono",
+    "client",
+    "gateway",
+    "model",
+    "utils",
+    "rustls_backend",
+]
+version = "0.11"
